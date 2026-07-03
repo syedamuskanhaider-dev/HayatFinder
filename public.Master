@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="public.master.cs" Inherits="HayatFinder._public" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>HayatFinder -  University of Gujrat  HafizHayat Campus Lost and Found portal</title>  
+ <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link href="Css/base.css" rel="stylesheet" />
+<link href="Css/public.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- Header Section -->
+        <header class="header" id="HeaderSection" runat="server">
+            <div class="header-inner">
+             <div class="logo">
+    <img src="images/logoimage.png" alt="HayatFinder Logo" />
+    
+       <span class="logo-text">
+        <span class="hayat">Hayat</span><span class="finder">Finder</span>
+    </span>
+   
+</div>
+                <nav class="header-center">
+                    <ul class="nav-links" id="nav" runat="server">
+                        <li id="liHome" runat="server"><a href="landing.aspx">Home</a></li>
+                        <li id="liAbout" runat="server"><a href="#about">About</a></li>
+                        <li id="liImportance" runat="server"><a href="#importance">Importance</a></li>
+                        <li id="liHowItWorks" runat="server"><a href="#howitworks">How It Works</a></li>
+                        <li id="liFaq" runat="server"><a href="#faq">FAQs</a></li>
+                        <li id="liContact" runat="server"><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-links" id="authlinks" runat="server">
+                    <a href="Login.aspx" class="auth-link login">Login</a>
+                    <span class="sep">/</span>
+                    <a href="Registration.aspx" class="auth-link signup">Signup</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content Section -->
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+
+        <!-- Footer Section -->
+        <footer id="contact" class="footer" runat="server">
+            <h3>Contact Us</h3>
+            <p>Email: support@HayatFinder.com | Phone: +92 123 456 7890</p>
+            <p>© 2025  UOG Hafiz Hayat Campus - Lost and Found portal-HayatFinder. All rights reserved.</p>
+        </footer>
+    </form>
+</body>
+</html>
