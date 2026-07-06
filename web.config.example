@@ -7,6 +7,11 @@
   <connectionStrings>
 	  <add name="HayatFinderDB" connectionString="workstation id=YOUR_SERVER;packet size=4096;user id=YOUR_USERID;pwd=YOUR_PASSWORD;data source=YOUR_SERVER;persist security info=False;initial catalog=YOUR_DB;TrustServerCertificate=True" providerName="System.Data.SqlClient" />
   </connectionStrings>
+
+		<system.web>
+			<customErrors mode="RemoteOnly" defaultRedirect="feed1.aspx"/>
+		</system.web>
+	
   <system.web>
     <compilation debug="true" targetFramework="4.7.2" />
     <httpRuntime targetFramework="4.7.2" />
