@@ -26,7 +26,7 @@
 </div>
                 <nav class="header-center">
                     <ul class="nav-links" id="nav" runat="server">
-                        <li id="liHome" runat="server"><a href="landing.aspx">Home</a></li>
+                        <li id="liHome" runat="server"><a href="default.aspx">Home</a></li>
                         <li id="liAbout" runat="server"><a href="#about">About</a></li>
                         <li id="liImportance" runat="server"><a href="#importance">Importance</a></li>
                         <li id="liHowItWorks" runat="server"><a href="#howitworks">How It Works</a></li>
