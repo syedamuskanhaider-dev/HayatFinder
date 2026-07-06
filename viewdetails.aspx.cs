@@ -23,7 +23,7 @@ namespace HayatFinder
 
         private void LoadItemDetails(int reportId)
         {
-            string constr = ConfigurationManager.ConnectionStrings["HayatFinderDB"].ConnectionString;
+            string constr = ConfigurationManager.ConnectionStrings["db_HayatFinder"].ConnectionString;
 
             using (SqlConnection con = new SqlConnection(constr))
             {

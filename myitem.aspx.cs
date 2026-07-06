@@ -8,7 +8,7 @@ namespace HayatFinder
 {
     public partial class myitem : System.Web.UI.Page
     {
-        string constr = ConfigurationManager.ConnectionStrings["HayatFinderDB"].ConnectionString;
+        string constr = ConfigurationManager.ConnectionStrings["db_HayatFinder"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

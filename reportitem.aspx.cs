@@ -51,8 +51,8 @@ namespace HayatFinder
                 photoPath = "Uploads/" + fileName;
             }
 
-            string constr = "Server=.\\SQLSEEVER; Database=db_HayatFinder; Integrated Security=True";
 
+            string constr = ConfigurationManager.ConnectionStrings["db_HayatFinder"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
             {
                 string query = @"INSERT INTO ReportedItems 

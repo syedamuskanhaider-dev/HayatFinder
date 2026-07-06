@@ -17,7 +17,7 @@ namespace HayatFinder
             string password = txtPassword.Text.Trim();
 
             //  connection string
-            string constr = ConfigurationManager.ConnectionStrings["HayatFinderDB"].ConnectionString;
+            string constr = ConfigurationManager.ConnectionStrings["db_HayatFinder"].ConnectionString;
 
             try
             {

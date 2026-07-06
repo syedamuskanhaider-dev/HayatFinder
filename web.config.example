@@ -5,7 +5,7 @@
   -->
 <configuration>
   <connectionStrings>
-	  <add name="HayatFinderDB" connectionString="workstation id=YOUR_SERVER;packet size=4096;user id=YOUR_USERID;pwd=YOUR_PASSWORD;data source=YOUR_SERVER;persist security info=False;initial catalog=YOUR_DB;TrustServerCertificate=True" providerName="System.Data.SqlClient" />
+	  <add name="db_HayatFinder" connectionString="workstation id=YOUR_SERVER;packet size=4096;user id=YOUR_USERID;pwd=YOUR_PASSWORD;data source=YOUR_SERVER;persist security info=False;initial catalog=YOUR_DB;TrustServerCertificate=True" providerName="System.Data.SqlClient" />
   </connectionStrings>
 
 		<system.web>

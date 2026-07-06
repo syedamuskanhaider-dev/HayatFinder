@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace HayatFinder
 {
-    public partial class landingaspx : System.Web.UI.Page
+    public partial class defaultaspx : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
