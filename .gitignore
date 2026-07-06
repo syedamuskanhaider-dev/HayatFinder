@@ -26,3 +26,11 @@ publish/
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# Ignore sensitive config
+Web.config
+
+# Keep example config
+!web.config.example
+!web.config.Debug.example
+!web.config.Release.example

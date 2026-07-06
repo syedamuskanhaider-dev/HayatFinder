@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Configuration;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -18,6 +19,8 @@ namespace HayatFinder
             // Pages that should have minimal header and no footer
             if (pageName == "login.aspx" || pageName == "registration.aspx" || pageName == "forgotpassword.aspx" || pageName == "resetpass.aspx")
             {
+
+                mainBody.Attributes["class"] = "auth-page";   
                 // ✅ Hide footer completely
                 contact.Visible = false;
 

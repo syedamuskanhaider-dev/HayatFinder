@@ -1,20 +1,23 @@
-﻿body {
+﻿body.auth-page {
     background: linear-gradient(135deg, #07417D, #80A69B);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 110px 20px 90px;
 }
-
 /* ====== AUTH FORM STYLES ====== */
 .container {
     display: flex;
-    width: 900px;
-    height: 550px;
+    width: 100%;
+    max-width: 900px;
+    min-height: 550px;
+    height: auto;
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    margin-top:68px;
+    margin: 0 auto;
 }
 
 .form-section {
@@ -38,7 +41,7 @@
 }
 
 .input-field {
-    width: 92%;
+    width: 100%;
     padding: 12px 15px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -54,7 +57,7 @@
     }
 
 .btn-signup {
-    width: 93%;
+    width: 100%;
     background-color: #07417D;
     color: #fff;
     border: none;
@@ -68,6 +71,7 @@
     .btn-signup:hover {
         background-color: #0050A0;
     }
+
 .validator {
     display: inline; /* keep it inline with the field */
     font-size: 0.85rem; /* slightly smaller than default text */
@@ -105,10 +109,11 @@
 }
 
     .image-section img {
-        width: 100%;
-        height: 100%;
+        max-width: 100%;
+        height: auto;
         object-fit: cover;
     }
+
 
 /* Overlay box */
 .overlay-box {
@@ -254,7 +259,28 @@
         color: #6F7070;
         padding: 0 6px;
     }
+/* Hamburger toggle button (mobile nav) - hidden on desktop */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1100;
+}
 
+    .nav-toggle span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background: var(--brand);
+        border-radius: 2px;
+    }
 
 /*   HERO SECTION */
 
@@ -268,21 +294,21 @@
     gap: 2rem;
     padding: 120px 6% 80px;
 }
-/*
+    /*
 Background image layer*/
-.hero .hero-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-/*    background: url('images/hero1.png') ;*/
-                    background: rgb(248, 250, 250);
-    background-size: cover;
-    background-position: center;
-    transform-origin: center;
-    filter: saturate(1.05) contrast(1.02);
-    animation: bg-zoom 24s linear infinite;
-}
-/*     Glowing background overlay 
+    .hero .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        /*    background: url('images/hero1.png') ;*/
+        background: rgb(248, 250, 250);
+        background-size: cover;
+        background-position: center;
+        transform-origin: center;
+        filter: saturate(1.05) contrast(1.02);
+        animation: bg-zoom 24s linear infinite;
+    }
+    /*     Glowing background overlay 
 */
     .hero .hero-glow {
         position: absolute;
@@ -294,7 +320,7 @@ Background image layer*/
         animation: glow-shift 9s ease-in-out infinite alternate;
         filter: blur(20px);
     }
-  /* Content box on 58 56 left side */
+    /* Content box on 58 56 left side */
 
     .hero .hero-content {
         position: relative;
@@ -428,96 +454,6 @@ Background image layer*/
         transform: translateY(-12px) rotate(1deg);
     }
 }
-/* Responsive layout */
-
-/*@media (max-width: 1024px) {
-    .hero-image-stack {
-        width: 100%;
-        max-width: 400px;
-        height: auto;
-        margin-top: 40px;
-    }
-
-    .stack-img {
-        position: static;
-        width: 100%;
-        height: auto;
-        border-radius: 20px;
-        margin-bottom: 20px;
-        animation: none;
-    }
-}*/
-/* Background animations */
-
-/*@keyframes bg-zoom {
-    0% {
-        transform: scale(1);
-        background-position: 50% 50%;
-    }
-
-    50% {
-        transform: scale(1.03);
-        background-position: 52% 48%;
-    }
-
-    100% {
-        transform: scale(1);
-        background-position: 50% 50%;
-    }
-}
-
-@keyframes glow-shift {
-    0% {
-        opacity: 0.9;
-        transform: scale(1);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1.02);
-    }
-}
-
-@keyframes content-entrance {
-    from {
-        opacity: 0;
-        transform: translateY(12px) scale(0.995);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-@keyframes float-y {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-12px);
-    }
-}*/
-/* Responsive behavior */
-
-/*@media (max-width: 1024px) {
-    .hero {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding: 100px 5% 60px;
-    }
-
-        .hero .hero-content {
-            width: 100%;
-            max-width: 720px;
-        }
-
-    .hero-img {
-        width: 360px;
-        max-width: 90%;
-    }
-}*/
 /* === ABOUT SECTION === */
 
 .info-section {
@@ -757,51 +693,197 @@ Background image layer*/
 }
 
 
-/* ==================== RESPONSIVE ADDITIONS ==================== */
+/* ==========================================================
+   RESPONSIVE DESIGN
+========================================================== */
 
-/* General container and feed adjustments */
-@media (max-width: 1024px) {
-    .container, .feed-section, .search-container {
-        width: 95%;
-        padding: 15px;
+/* ---------- 1200px ---------- */
+@media (max-width:1200px) {
+
+    .header {
+        padding: 0 5%;
     }
 
-    .item-card {
-        flex-direction: column;
-        width: 100%;
+    .hero,
+    .info-section,
+    .importance,
+    .how-it-works,
+    .faq,
+    .footer {
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
-    .item-image img {
-        width: 100%;
-        height: auto;
+    .hero-image-stack {
+        width: 420px;
+        height: 360px;
     }
+
+    .stack-img {
+        width: 190px;
+        height: 140px;
+    }
+    .image-section img {
+        height: stretch;
+    }
+   
 }
 
-/* Modals responsiveness */
-@media (max-width: 768px) {
-    .help-modal-content, .claim-modal .help-modal-content {
-        width: 90%;
-        padding: 20px;
+/* ---------- 992px ---------- */
+@media (max-width:992px) {
+
+    html {
+        font-size: 95%;
     }
 
-    .report-textarea, .report-input {
-        width: 100%;
-    }
-}
+    /* AUTH */
 
-/* Navigation responsiveness */
-@media (max-width: 768px) {
+    .container {
+        max-width: 750px;
+    }
+
+    .form-section {
+        padding: 35px;
+    }
+
+    .image-section {
+        width: 50%;
+    }
+        .image-section img {
+            height: stretch;
+        }
+
+    .overlay-box {
+        max-width: 240px;
+        padding: 25px;
+    }
+
+    /* HEADER */
+
+    .header {
+        padding: 0 20px;
+    }
+
+    .header-inner {
+        gap: 15px;
+    }
+
     .nav-links {
+        gap: 18px;
+    }
+
+    /* HERO */
+
+    .hero {
         flex-direction: column;
-        gap: 10px;
-        background: #fff;
+        justify-content: center;
+        text-align: center;
+        padding: 120px 30px 70px;
+    }
+
+        .hero .hero-content {
+            width: 100%;
+            max-width: 700px;
+        }
+
+    .hero-image-stack {
+        max-width: 100%;
+        width: 100%;
+        height: 380px;
+    }
+
+    .info-section {
+        flex-direction: column;
+        height: auto;
+        gap: 40px;
+        padding: 80px 30px;
+    }
+
+    .info-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .info-section img {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .importance-boxes,
+    .steps {
+        justify-content: center;
+    }
+
+    .box,
+    .step {
+        width: 45%;
+    }
+ 
+}
+
+/* ---------- 768px ---------- */
+@media (max-width:768px) {
+
+    html {
+        font-size: 90%;
+    }
+
+    /* AUTH */
+
+    .container {
+        flex-direction: column;
+        max-width: 500px;
+    }
+
+    .form-section {
+        width: 100%;
+        order: 2;
+        padding: 35px 25px;
+    }
+
+    .image-section {
+        width: 100%;
+        height: 280px;
+        order: 1;
+    }
+        .image-section img {
+            
+            height: stretch;
+           
+        }
+
+    .overlay-box {
+        max-width: 300px;
+    }
+
+    /* HEADER */
+
+    .header {
+        height: 70px;
+    }
+
+    .header-inner {
+        position: relative;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .header-center {
         position: absolute;
         top: 70px;
         left: 0;
         width: 100%;
-        padding: 15px 0;
-        display: none; /* toggle with JS for hamburger menu */
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 8px 18px rgba(0,0,0,.08);
+        padding: 20px 0;
     }
 
         .nav-links.show {
@@ -809,95 +891,254 @@ Background image layer*/
         }
 
     .auth-links {
-        flex-direction: column;
-        gap: 10px;
+        display: none;
     }
-}
 
-/* Font scaling */
-@media (max-width: 768px) {
-    .hero-title {
+    /* HERO */
+
+    .hero {
+        padding: 110px 20px 60px;
+    }
+
+        .hero .hero-title {
+            font-size: 2.1rem;
+        }
+
+        .hero .hero-sub {
+            font-size: 1rem;
+        }
+
+        .hero .hero-content {
+            padding: 28px;
+        }
+
+    .hero-image-stack {
+        height: 330px;
+    }
+
+    .stack-img {
+        width: 170px;
+        height: 120px;
+    }
+
+    /* ABOUT */
+
+    .info-text h2 {
         font-size: 2rem;
     }
 
-    .hero-sub {
+    .info-text p {
         font-size: 1rem;
     }
 
-    .importance h2, .how-it-works h2, .faq h2 {
-        font-size: 1.5rem;
+    /* CARDS */
+
+    .box,
+    .step {
+        width: 100%;
+        max-width: 420px;
     }
 
-    .step-number {
-        width: 35px;
-        height: 35px;
-        line-height: 35px;
-        font-size: 0.9rem;
+    /* FAQ */
+
+    .faq-item {
+        width: 100%;
     }
+   
 }
 
-/* Footer adjustments */
-@media (max-width: 768px) {
-    .footer {
-        padding: 40px 5%;
+/* ---------- 576px ---------- */
+@media (max-width:576px) {
+
+    body {
+        overflow-x: hidden;
     }
 
-        .footer h3 {
-            font-size: 1.2rem;
+    html {
+        font-size: 87%;
+    }
+
+    /* AUTH */
+
+    body.auth-page {
+        padding: 90px 15px 50px;
+    }
+
+    .container {
+        border-radius: 15px;
+    }
+
+    .form-section {
+        padding: 25px 18px;
+    }
+
+    .image-section {
+        height: 220px;
+    }
+        .image-section img {
+            height: stretch;
         }
-}
 
-/* Steps, boxes, and importance section adjustments */
-@media (max-width: 768px) {
-    .importance-boxes, .steps {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .box, .step {
+    .overlay-box {
+        padding: 20px;
         width: 90%;
     }
-}
 
-/* FAQ items */
-@media (max-width: 768px) {
-    .faq-item {
-        width: 95%;
-        margin: 10px auto;
+        .overlay-box h2 {
+            font-size: 22px;
+        }
+
+        .overlay-box p {
+            font-size: 14px;
+        }
+
+    /* LOGO */
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+        .logo img {
+            width: 70px;
+            height: 70px;
+            margin-top: 8px;
+            margin-right: -10px;
+        }
+
+    /* HERO */
+
+    .hero {
+        padding: 95px 15px 40px;
+    }
+
+        .hero .hero-content {
+            padding: 22px;
+        }
+
+        .hero .hero-title {
+            font-size: 1.8rem;
+        }
+
+        .hero .hero-sub {
+            font-size: .95rem;
+        }
+
+    .btn-hero,
+    .btn-signup {
+        width: 100%;
+    }
+
+    .hero-image-stack {
+        height: 270px;
+    }
+
+    .stack-img {
+        width: 130px;
+        height: 95px;
+    }
+
+    .img1 {
+        left: 5%;
+    }
+
+    .img2 {
+        left: 50%;
+    }
+
+    .img3 {
+        left: 8%;
+    }
+
+    .img4 {
+        left: 48%;
+    }
+
+    /* ABOUT */
+
+    .info-section {
+        padding: 60px 15px;
+    }
+
+        .info-section img {
+            max-width: 100%;
+        }
+
+    /* SECTIONS */
+
+    .importance,
+    .how-it-works,
+    .faq,
+    .footer {
+        padding: 60px 15px;
+    }
+
+    .box,
+    .step {
+        width: 100%;
     }
 
     .answer {
-        max-height: none;
+        font-size: .9rem;
     }
+
+    .footer h3 {
+        font-size: 1.3rem;
+    }
+
+    .footer p {
+        font-size: .9rem;
+    }
+   
 }
 
-/* Search bar adjustments for mobile */
-@media (max-width: 480px) {
-    .search-container {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
+/* ---------- 400px ---------- */
+@media (max-width:400px) {
+
+    html {
+        font-size: 82%;
     }
 
-    .search-box, .search-btn {
-        width: 100%;
-    }
-}
-
-/* Hero section mobile tweaks */
-@media (max-width: 480px) {
-    .hero {
-        padding: 80px 5% 40px;
+    .hero .hero-title {
+        font-size: 1.5rem;
     }
 
-    .hero-img, .hero-image-stack {
-        width: 100%;
-        max-width: 100%;
+    .hero .hero-sub {
+        font-size: .9rem;
     }
 
-    .hero .hero-content {
-        width: 100%;
-        padding: 20px;
+    .hero-image-stack {
+        height: 220px;
     }
+
+    .stack-img {
+        width: 105px;
+        height: 80px;
+    }
+
+    .form-box h2 {
+        font-size: 1.5rem;
+    }
+
+    .overlay-box {
+        padding: 15px;
+    }
+
+        .overlay-box h2 {
+            font-size: 18px;
+        }
+
+        .overlay-box p {
+            font-size: 13px;
+        }
+
+    .info-text h2,
+    .importance h2,
+    .how-it-works h2,
+    .faq h2 {
+        font-size: 1.5rem;
+    }
+    .image-section img {
+        height: stretch;
+    }
+   
 }

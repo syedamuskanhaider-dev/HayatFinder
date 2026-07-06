@@ -16,8 +16,8 @@ namespace HayatFinder
         }
              protected void btnRegister_Click(object sender, EventArgs e)
         {
-         
-            string constr = "Server=.\\SQLSEEVER; DataBase=db_HayatFinder ;Integrated Security=True";
+
+            string constr = ConfigurationManager.ConnectionStrings["HayatFinderDB"].ConnectionString;
             SqlConnection con = new SqlConnection(constr);
          
                 string query = "INSERT INTO tbluser (FullName, Email, PasswordHash) VALUES (@FullName, @Email, @PasswordHash)";

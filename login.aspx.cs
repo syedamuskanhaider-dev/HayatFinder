@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Web.UI;
 
@@ -16,7 +17,7 @@ namespace HayatFinder
             string password = txtPassword.Text.Trim();
 
             //  connection string
-            string constr = "Server=.\\SQLSEEVER; Database=db_HayatFinder; Integrated Security=True";
+            string constr = ConfigurationManager.ConnectionStrings["HayatFinderDB"].ConnectionString;
 
             try
             {

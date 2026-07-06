@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Configuration;
+using System;
 using System.Data.SqlClient;
 
 namespace HayatFinder
@@ -22,7 +23,7 @@ namespace HayatFinder
 
         private void LoadItemDetails(int reportId)
         {
-            string constr = "Server=.\\SQLSEEVER; Database=db_HayatFinder; Integrated Security=True";
+            string constr = ConfigurationManager.ConnectionStrings["HayatFinderDB"].ConnectionString;
 
             using (SqlConnection con = new SqlConnection(constr))
             {

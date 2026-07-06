@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Net;
@@ -18,7 +19,7 @@ namespace HayatFinder
 
         private void LoadItems(string search = "")
         {
-            string constr = "Server=.\\SQLSEEVER; Database=db_HayatFinder; Integrated Security=True";
+            string constr = ConfigurationManager.ConnectionStrings["HayatFinderDB"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
             {
                 string query = "SELECT * FROM ReportedItems";

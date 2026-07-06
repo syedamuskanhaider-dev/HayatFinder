@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Configuration;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.UI.WebControls;
@@ -7,8 +8,7 @@ namespace HayatFinder
 {
     public partial class myitem : System.Web.UI.Page
     {
-        private string constr = "Server=.\\SQLSEEVER; Database=db_HayatFinder; Integrated Security=True;";
-
+        string constr = ConfigurationManager.ConnectionStrings["HayatFinderDB"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

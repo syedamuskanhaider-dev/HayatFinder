@@ -8,14 +8,15 @@
 }
 
 /* Body Defaults */
-html,body {
+html, body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     min-height: 100vh;
 }
+
 form {
-    margin: 0 ;
+    margin: 0;
     padding: 0;
 }
 
@@ -76,5 +77,212 @@ button,
 
     50% {
         transform: translateY(-10px);
+    }
+}
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+/* Large Laptops (1200px and below) */
+@media (max-width:1200px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 95%;
+        margin: auto;
+    }
+
+    section {
+        padding: 60px 5%;
+    }
+}
+
+/* Small Laptops & Tablets */
+@media (max-width:992px) {
+
+    html {
+        font-size: 95%;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .hero,
+    .home,
+    .banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .hero-content,
+    .hero-image,
+    .left,
+    .right {
+        width: 100%;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    button,
+    .btn,
+    .btn-hero,
+    .btn-signup {
+        width: auto;
+        padding: 12px 24px;
+    }
+}
+
+/* Tablets */
+@media (max-width:768px) {
+
+    html {
+        font-size: 90%;
+    }
+
+    section {
+        padding: 50px 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: .95rem;
+        line-height: 1.7;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    input,
+    textarea,
+    select {
+        width: 100%;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
+/* Large Mobile Phones */
+@media (max-width:576px) {
+
+    html {
+        font-size: 87%;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: .9rem;
+    }
+
+    button,
+    .btn,
+    .btn-hero,
+    .btn-signup,
+    .report-submit-btn,
+    .report-cancel-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    input,
+    textarea,
+    select {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* Small Mobile Phones */
+@media (max-width:400px) {
+
+    html {
+        font-size: 82%;
+    }
+
+    section {
+        padding: 30px 12px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    p {
+        font-size: .85rem;
+    }
+
+    button,
+    .btn,
+    .btn-hero,
+    .btn-signup,
+    .report-submit-btn,
+    .report-cancel-btn {
+        font-size: 14px;
+        padding: 10px;
     }
 }

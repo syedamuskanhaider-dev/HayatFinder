@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HayatFinder -  University of Gujrat  HafizHayat Campus Lost and Found portal</title>  
  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
     <link href="Css/base.css" rel="stylesheet" />
@@ -10,7 +11,7 @@
 
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
-<body>
+<body id="mainBody" runat="server">
     <form id="form1" runat="server">
         <!-- Header Section -->
         <header class="header" id="HeaderSection" runat="server">
@@ -38,6 +39,10 @@
                     <span class="sep">/</span>
                     <a href="Registration.aspx" class="auth-link signup">Signup</a>
                 </div>
+
+                <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" onclick="togglePublicNav()">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </header>
 
@@ -49,9 +54,38 @@
         <!-- Footer Section -->
         <footer id="contact" class="footer" runat="server">
             <h3>Contact Us</h3>
-            <p>Email: support@HayatFinder.com | Phone: +92 123 456 7890</p>
+            <p>Email: support@HayatFinder.com </p>
             <p>© 2025  UOG Hafiz Hayat Campus - Lost and Found portal-HayatFinder. All rights reserved.</p>
         </footer>
     </form>
+
+    <script>
+        function togglePublicNav() {
+            var nav = document.getElementById("nav");
+            var btn = document.getElementById("navToggle");
+            var isOpen = nav.classList.toggle("show");
+            btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        document.addEventListener('click', function (e) {
+            var nav = document.getElementById("nav");
+            var btn = document.getElementById("navToggle");
+            if (!nav || !btn) return;
+            var clickedInside = nav.contains(e.target) || btn.contains(e.target);
+            if (!clickedInside && nav.classList.contains("show")) {
+                nav.classList.remove("show");
+                btn.setAttribute("aria-expanded", "false");
+            }
+        });
+
+        window.addEventListener('resize', function () {
+            var nav = document.getElementById("nav");
+            var btn = document.getElementById("navToggle");
+            if (window.innerWidth > 768 && nav && nav.classList.contains("show")) {
+                nav.classList.remove("show");
+                btn.setAttribute("aria-expanded", "false");
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1,55 +1,119 @@
-# 🧭 HayatFinder – Lost & Found Management System
+<div align="center">
 
-HayatFinder is a web-based Lost and Found Management System developed using ASP.NET Web Forms and SQL Server. The system enables users to report lost or found items, browse available listings, search for items, and securely contact item owners through email notifications.
+# HayatFinder
 
----
+### Lost & Found Management System
 
-## 📌 Features
+A responsive Lost & Found Management System built using **ASP.NET Web Forms**, **C#**, and **SQL Server**.
 
-- 🔐 User Authentication (Login)
-- 📝 Report Lost and Found Items
-- 🔍 Search Items by Name, Category, Description, or Location
-- 📋 Browse Latest Reported Items
-- 📧 Send Claim Requests to Item Owners
-- 🤝 Send Help Requests
-- 📨 Automatic Email Notifications
-- 🗄️ SQL Server Database Integration
-- 👤 Session-Based User Management
-- 📱 Responsive Web Interface
+🌐 **Live Demo:** http://hayatfinder.somee.com
 
 ---
 
-## 🛠️ Technologies Used
+![ASP.NET](https://img.shields.io/badge/ASP.NET-Web%20Forms-512BD4?style=for-the-badge&logo=.net)
+![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
+![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-- ASP.NET Web Forms (.NET Framework)
-- C#
-- SQL Server
-- ADO.NET
-- HTML5
-- CSS3
-- JavaScript
-- Bootstrap
-- SMTP (Gmail) Email Service
+</div>
 
 ---
 
-## 📂 Project Structure
+# 📖 About
 
-```
-HayatFinder/
+HayatFinder is a **Lost & Found Management System** developed using **ASP.NET Web Forms**, **C#**, and **SQL Server**.
+
+The platform allows users to:
+
+- Report lost items
+- Report found items
+- Search available listings
+- Manage their own reports
+- Send claim requests
+- Contact item owners through email notifications
+
+The application is fully responsive and designed to provide an intuitive user experience across desktop and mobile devices.
+
+---
+
+# 🌐 Live Demo
+
+### 🚀 Visit Website
+
+## http://hayatfinder.somee.com
+
+---
+
+# ✨ Features
+
+✅ User Registration
+
+✅ Secure Login Authentication
+
+✅ Session Management
+
+✅ Report Lost Items
+
+✅ Report Found Items
+
+✅ Search Items
+
+✅ Browse Latest Listings
+
+✅ View Item Details
+
+✅ Claim Lost Items
+
+✅ Help Item Owners
+
+✅ Email Notifications
+
+✅ Responsive Design
+
+---
+
+# 🛠 Tech Stack
+
+| Technology | Purpose |
+|------------|----------|
+| ASP.NET Web Forms | Web Framework |
+| C# | Backend Development |
+| SQL Server | Database |
+| ADO.NET | Database Connectivity |
+| HTML5 | Structure |
+| CSS3 | Styling |
+| JavaScript | Client-side Functionality |
+| Bootstrap | Responsive UI |
+| SMTP (Gmail) | Email Notifications |
+
+---
+
+# 📂 Project Structure
+
+```text
+HayatFinder
+│
+├── Css/
+├── images/
+├── Uploads/
+├── Properties/
 │
 ├── landing.aspx
 ├── login.aspx
+├── Registration.aspx
 ├── feed1.aspx
+├── reportitem.aspx
 ├── myitem.aspx
+├── viewdetails.aspx
+│
+├── Site.Master
+├── public.Master
 │
 ├── *.cs
 ├── *.designer.cs
-│
-├── App_Data/
-├── Images/
-├── CSS/
-├── Scripts/
 │
 ├── packages.config
 ├── HayatFinder.csproj
@@ -58,92 +122,152 @@ HayatFinder/
 
 ---
 
-## 🚀 Main Modules
+# 🚀 Main Modules
 
-### 🏠 Landing Page
-- Introduction to the platform
-- Navigation to Login and Main Features
+## 🏠 Landing Page
 
-### 🔐 Login System
-- User authentication
-- Session management
-- Secure access to application features
-
-### 📋 Item Feed
-- View all reported items
-- Search functionality
-- View item details
-
-### 📧 Contact Item Owner
-- Send Help Request
-- Send Claim Request
-- Email notifications using Gmail SMTP
-
-### 👤 My Items
-- View items reported by the logged-in user
+- Platform introduction
+- Navigation
+- Feature highlights
 
 ---
 
-## 🗃️ Database
+## 🔐 Authentication
 
-The project uses **Microsoft SQL Server**.
+- User Registration
+- Secure Login
+- Session Management
 
-Example Tables:
+---
+
+## 📋 Lost & Found Feed
+
+- Browse all reported items
+- Search functionality
+- Item Details
+
+---
+
+## 📝 Report Item
+
+- Report Lost Items
+- Report Found Items
+- Upload item information
+
+---
+
+## 👤 My Items
+
+- View personal reports
+- Manage reported items
+
+---
+
+## 📧 Email System
+
+- Claim Requests
+- Help Requests
+- Automatic Email Notifications
+
+---
+
+# 🗄 Database
+
+Microsoft SQL Server
+
+### Main Tables
 
 - Users
 - ReportedItems
 
 ---
 
-## ⚙️ Installation
+# 📱 Responsive Design
 
-### Prerequisites
+Optimized for
 
-- Visual Studio 2022 (or later)
-- SQL Server
-- IIS Express
+- 💻 Desktop
+- 💼 Laptop
+- 📱 Mobile
+- 📟 Tablet
+
+---
+
+# ⚙ Installation
+
+## Requirements
+
+- Visual Studio 2022
 - .NET Framework
-- SQL Server Management Studio (SSMS)
+- SQL Server
+- SSMS
+- IIS Express
 
-### Steps
+---
 
-1. Clone the repository
+## Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/HayatFinder.git
+git clone https://github.com/syedamuskanhaider-dev/HayatFinder.git
 ```
 
-2. Open `HayatFinder.csproj` in Visual Studio.
+---
 
-3. Restore NuGet packages.
+## Setup
 
-4. Create the SQL Server database.
+1. Open **HayatFinder.csproj**
 
-5. Update the connection string in the project.
+2. Restore NuGet Packages
 
-6. Configure Gmail SMTP credentials (or use your own email service).
+3. Create SQL Server Database
 
-7. Run the project using IIS Express.
+4. Configure your own **Web.config**
+
+5. Add SMTP Email Credentials
+
+6. Run using IIS Express
 
 ---
 
-## 📧 Email Notifications
+# 📧 Email Notifications
 
-The system automatically sends email notifications when:
+Automatic emails are sent when:
 
-- A user wants to claim an item.
-- A user wants to help the owner.
-
----
-
-## 👩‍💻 Developed By
-
-**Syeda Muskan Haider**
-
-BS Software Engineering Student
+- A user submits a Claim Request
+- A user sends a Help Request
 
 ---
 
-## 📄 License
+# 🚀 Future Improvements
+
+- 🤖 AI Item Matching
+- 📍 Google Maps Integration
+- 📸 Multiple Image Upload
+- 🔔 Real-time Notifications
+- 📱 Progressive Web App (PWA)
+
+---
+
+# 👩‍💻 Developer
+
+### Syeda Muskan Haider
+
+**BS Software Engineering Student**
+
+**Front-End Developer**
+
+**ASP.NET Web Forms Developer**
+
+---
+
+# ⭐ Support
+
+If you like this project,
+
+## ⭐ Don't forget to Star this repository.
+
+---
+
+# 📄 License
 
 This project was developed for educational and academic purposes.

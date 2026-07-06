@@ -9,7 +9,6 @@
     justify-content: space-between;
     align-items: center;
     background: #fff;
-  
     padding: 15px 40px;
     box-shadow: var(--shadow-strong);
     position: relative; /* NOT fixed */
@@ -83,6 +82,27 @@
     display: flex;
     align-items: center;
 }
+/* Hamburger toggle button (mobile nav) - hidden on desktop */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+    .nav-toggle span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background: var(--brand);
+        border-radius: 2px;
+    }
 
 .logout-btn {
     background: var(--white);
@@ -119,6 +139,8 @@
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 320px;
+    max-width: 90%;
+    box-sizing: border-box;
     animation: fadeIn 0.3s ease;
 }
 
@@ -183,7 +205,7 @@ form {
     padding: 0;
 }
 
-/*    form > div {
+    /*    form > div {
         flex: 1;
         padding: 40px;
         background:#f7f9fb;
@@ -254,10 +276,12 @@ form {
 .report-card {
     background: #ffffffcc;
     backdrop-filter: blur(6px);
-    width: 850px;
+    width: 100%;
+    max-width: 850px;
     padding: 40px 45px;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
 .report-title {
@@ -339,6 +363,7 @@ form {
         background-color: #f4f9f7;
         border-color: #07417D;
     }
+
     .report-upload-box input[type="file"] {
         position: absolute;
         width: 100%;
@@ -371,7 +396,7 @@ form {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-top:33px;
+    margin-top: 33px;
 }
 
 .report-submit-btn {
@@ -427,6 +452,8 @@ form {
     text-align: center;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     animation: popup 0.3s ease;
+    max-width: 90vw;
+    box-sizing: border-box;
 }
 
     .success-modal-content h3 {
@@ -540,14 +567,8 @@ form {
 /* ==============================
    ITEM CARD GRID (fixed)
 ============================== */
-/*
-.feed-section .item-card-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    justify-items: center;
-}*/
-.container{
+
+.container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
@@ -568,20 +589,7 @@ form {
     flex-direction: column;
 }
 
-/*.item-card {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 22vw;
-    margin: 28px 21px;
-    height: 430px;
-    display: inline-flex;
-    flex-direction: column;
-    height: 420px;*/ /* fixed height for uniformity */
 
-/*}*/
 
     .item-card:hover {
         transform: translateY(-5px);
@@ -698,8 +706,9 @@ form {
 }
 
     .btn-details:hover {
-        background-color:gray;
+        background-color: gray;
     }
+
 .help-modal {
     position: fixed !important;
     top: 0;
@@ -742,6 +751,7 @@ form {
     margin-left: 25px;
     margin-top: 39px;
 }
+
 .item-card {
     position: relative; /* ensures absolute elements (menu) are anchored here */
 }
@@ -803,58 +813,27 @@ form {
     }
 
         .menu-options a:hover,
-         #btnDelete,
+        #btnDelete,
         .menu-options button:hover {
             background-color: #f5f5f5;
         }
 
 
-
-/* ==============================
-   Responsive
-============================== */
-
-@media (max-width: 1024px) {
-    .feed-section .item-card-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .feed-section .item-card-container {
-        grid-template-columns: 1fr;
-    }
-}
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .item-image-container, .item-details {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-
-    .btn-back {
-        position: static;
-        width: 100%;
-        margin-top: 10px;
-    }
-}
 /* Container */
 .item-card1 {
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    max-width: 50vw;
+    width: 100%;
+    max-width: 700px;
     margin: 50px auto; /* center horizontally */
     display: flex;
     flex-direction: column;
     position: relative; /* needed for absolute positioning of back button */
     height: 75vh;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
 }
 
     .item-card1:hover {
@@ -865,8 +844,7 @@ form {
 /* Image on top */
 .item-image1 {
     width: 100%;
-    height: 50%;  
-    
+    height: 50%;
     overflow: hidden;
 }
 
@@ -877,36 +855,214 @@ form {
         display: block;
         object-position: left;
     }
-  
-    
-/* Info section */
-/*.item-info1 {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    height: 50%;*/ /* bottom half */
-    /*overflow: hidden;
+/* RESPONSIVE */
+
+/* Item grid (Feed & My Items use class="container" as a grid) */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
 }
 
-    .item-info1 h3 {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: #222;
-        margin-bottom: 8px;
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 15px;
+    }
+}
+/* Header / nav small-phone tweaks */
+@media (max-width: 480px) {
+    .user-header {
+        padding: 8px 12px;
+        min-height: 54px;
     }
 
-    .item-info1 p {
-        font-size: 0.95rem;
-        color: #555;
-        line-height: 1.4;
-        margin-bottom: 5px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-    }*/
+    .logo {
+        font-size: 1rem;
+    }
+
+        .logo img {
+            height: 38px;
+            width: 38px;
+            margin-top: 0;
+            margin-right: 4px;
+        }
+
+    .user-nav ul {
+        gap: 6px;
+    }
+
+    form > div:not(.aspNetHidden) {
+        padding: 0px;
+    }
+}
+
+
+/* View Details page (.item-card1) */
+@media (max-width: 992px) {
+    .item-card1 {
+        max-width: 90vw;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .user-header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        gap: 10px;
+        padding: 10px 16px;
+        height: auto;
+        min-height: 60px;
+        position: relative;
+    }
+
+    .header-left {
+        gap: 10px;
+    }
+
+    .logo img {
+        height: 46px;
+        width: 46px;
+        margin-top: 0;
+        margin-right: 4px;
+    }
+
+    .logo {
+        font-size: 1.15rem;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .user-nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        margin: 0;
+        padding: 12px 20px 18px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+        z-index: 200;
+    }
+
+        .user-nav ul.show {
+            display: flex;
+        }
+
+    .logout-btn {
+        padding: 7px 14px;
+        font-size: 0.85rem;
+    }
+
+    form > div:not(.aspNetHidden) {
+        padding: 0px;
+    }
+    .item-image1 {
+        height: 240px;
+    }
+
+    .item-info1 {
+        height: auto;
+    }
+
+   
+    .item-card1 {
+        width: 90vw;
+        height: 400px;
+    }
+
+    .btn-back {
+        padding: 8px 20px;
+        font-size: 13px;
+    }
+
+    .search-container {
+        width: 83%;
+    } 
+
+}
+
+/* Report Item form */
+@media (max-width: 900px) {
+    .report-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .report-col {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .report-wrapper {
+        padding: 15px 10px;
+    }
+
+    .report-card {
+        padding: 25px 20px;
+    }
+
+    .report-upload-box {
+        padding: 25px;
+    }
+
+    .report-button-group {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .report-submit-btn,
+    .report-cancel-btn {
+        width: 100%;
+    }
+    form > div {
+        padding: 0px;
+    }
+}
+
+
+
+/* Item cards (Feed / My Items grid tiles) */
+@media (max-width: 480px) {
+    .help-modal-content,
+    .logout-modal-content,
+    .success-modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .item-card {
+        height: auto;
+    }
+
+    .item-image {
+        height: 160px;
+    }
+
+    .buttons {
+        gap: 6px;
+    }
+
+    .btn-help,
+    .btn-details {
+        padding: 10px 0;
+        font-size: 0.85rem;
+    }
+    form > div {
+        padding: 0px;
+    }
+}
 
 .item-info1 {
     padding: 15px;
@@ -917,13 +1073,13 @@ form {
     overflow: auto;
 }
 
-/* Individual fields */
-.item-info1 div {
-    margin-bottom: 8px;
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.4;
-}
+    /* Individual fields */
+    .item-info1 div {
+        margin-bottom: 8px;
+        font-size: 0.95rem;
+        color: #555;
+        line-height: 1.4;
+    }
 
 /* Title */
 .item-title {
@@ -937,7 +1093,7 @@ form {
 .item-info1 strong {
     color: #222;
 }
-       
+
 
 
 /* Back button inside container, bottom-right */
@@ -947,7 +1103,7 @@ form {
     right: 15px; /* changed from left to right */
     padding: 10px 25px;
     font-size: 14px;
-    background-color:  #0056b3;
+    background-color: #0056b3;
     color: #fff;
     border: none;
     border-radius: 6px;
@@ -960,162 +1116,3 @@ form {
         background-color: #007bff;
     }
 
-
-/* Responsive */
-@media (max-width: 768px) {
-    .item-card1 {
-        width: 90vw;
-        height: 400px;
-    }
-
-    .btn-back {
-        padding: 8px 20px;
-        font-size: 13px;
-    }
-}
-
-/* Feed section */
-/*@media (max-width: 768px) {*/
-    /* ... other rules ... */
-    /*#rptItems, .item-list {*/
-            /* Switch to 2 columns on tablets */
-            /*grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }*/
-        /* ... other rules ... */
-    /*}*/
-    /* Modals */
-    /*.help-modal-content,
-    .logout-modal-content,
-    .success-modal-content {
-        width: 90%;
-        padding: 20px;
-    }*/
-
-    /* Report card adjustments */
-    /*.report-card {
-        width: 95%;
-        padding: 25px;
-    }
-
-    .report-row {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .report-col {
-        min-width: 100%;
-    }
-
-    .report-button-group {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .report-submit-btn,
-    .report-cancel-btn {
-        width: 100%;
-    }*/
-
-    /* Font scaling */
-    /*.page-title {
-        font-size: 20px;
-    }
-
-    .item-title {
-        font-size: 24px;
-    }
-
-    .item-description {
-        font-size: 15px;
-    }
-
-    .item-meta {
-        font-size: 13px;
-    }
-
-    .feed-section h2 {
-        font-size: 1.5rem;
-    }
-}*/
-
-/* -----------------------------
-   PHONES / VERY SMALL SCREENS (<480px)
------------------------------ */
-/*@media (max-width: 480px) {
-    .user-header {
-        padding: 15px 10px;
-    }
-
-    .logo {
-        font-size: 1.4rem;
-    }
-
-        .logo img {
-            height: 60px;
-            width: 60px;
-            margin-top: 10px;
-            margin-right: -10px;
-        }
-
-    .search-container {
-        gap: 5px;
-    }
-
-    .feed-section {
-        padding: 0 10px;
-        margin: 20px auto;
-    }
-
-    #rptItems, .item-list {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .item-card img {
-        height: auto;
-    }
-
-    .report-wrapper {
-        padding: 15px 5px;
-    }
-
-    .report-card {
-        padding: 20px;
-    }
-
-    .container {
-        margin: 20px 10px;
-        padding: 15px;
-    }
-
-    .item-title {
-        font-size: 20px;
-    }
-
-    .item-description {
-        font-size: 14px;
-    }
-
-    .item-meta {
-        font-size: 12px;
-    }
-
-    .btn-back {
-        width: 100%;
-        text-align: center;
-    }
-
-    .buttons {
-        gap: 5px;
-    }
-
-    .btn-help,
-    .btn-details {
-        padding: 10px 0;
-    }
-
-    .success-modal-content {
-        padding: 20px;
-    }
-}*/

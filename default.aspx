@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/public.Master" AutoEventWireup="true" CodeBehind="landing.aspx.cs" Inherits="HayatFinder.landingaspx" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/public.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="HayatFinder.landingaspx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -11,7 +11,7 @@
         <p class="hero-sub">
           
 Your trusted campus Lost & Found system.
-Find your lost belongings or help others by reporting found items ,all in one place.
+Find your lost belongings or help others by reporting found items,all in one place.
         </p>
         <a href="Registration.aspx" class="btn-hero">Get Started</a>
     </div>
@@ -106,7 +106,7 @@ Find your lost belongings or help others by reporting found items ,all in one pl
             <div class="faq-item">
                 <input type="checkbox" id="faq4" />
                 <label for="faq4">Is HayatFinder free?<span class="arrow">▼</span></label>
-                <div class="answer">Yes! HayatFinderis completely free for all users.</div>
+                <div class="answer">Yes! HayatFinder is completely free for all users.</div>
             </div>
         </section>
 
